@@ -41,8 +41,8 @@ pipeline {
                   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'EKS', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                      sh "chmod +x changeTag_blue.sh"
                      sh "./changeTag_blue.sh ${DOCKER_TAG}"   
-                     sh "kubectl apply -f node-app-pod.yml"
-                     sh "kubectl apply -f service.yml"
+                     sh "kubectl apply -f blue_kubernates.yml"
+                     sh "kubectl apply -f blue_service.yml"
   
                    }           
                 }
@@ -59,8 +59,8 @@ pipeline {
                   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'EKS', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                      sh "chmod +x changeTag_green.sh"
                      sh "./changeTag_green.sh ${DOCKER_TAG}"   
-                     sh "kubectl apply -f node-app-pod.yml"
-                     sh "kubectl apply -f service.yml"
+                     sh "kubectl apply -f green_kubernates.yml"
+                     sh "kubectl apply -f green_service.yml"
   
                    }           
                 }
