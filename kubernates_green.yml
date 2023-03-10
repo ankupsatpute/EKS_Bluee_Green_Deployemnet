@@ -16,7 +16,7 @@ spec:
     spec:    
       containers:
       - name: green
-        image: ankushsatpute/ltidockerdemo:tagVersion
+        image: ankushsatpute/ankush:tagVersion
         imagePullPolicy: Always      
         ports:
         - containerPort: 8080
