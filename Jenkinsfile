@@ -15,7 +15,7 @@ pipeline {
                }
             }
         
-     /*   stage('Maven Build'){
+       stage('Maven Build'){
            steps{
                sh 'mvn clean package'
                  }
@@ -34,7 +34,7 @@ pipeline {
                 sh "docker rmi ankushsatpute/ankush:${DOCKER_TAG}"
                 
                 }
-             }*/
+             }
           
           stage('Create the service in kubernetes cluster traffic to blue controller'){
              steps{ 
