@@ -1,7 +1,0 @@
----
- - name: Tomcat Setup
-   hosts: slave
-   become: true
-   gather_facts: yes
-   roles:
-     - tomcat

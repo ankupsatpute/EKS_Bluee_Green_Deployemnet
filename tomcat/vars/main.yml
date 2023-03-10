@@ -1,9 +1,0 @@
----
-# vars file for tomcat
-nexus_Ip: 15.207.108.72:8081
-nexus_user: admin
-nexus_password: admin
-group_Id: groupid
-artifact_Id: artifact 
-tomcat_url: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz"
-tomcat_pck: apache-tomcat-9.0.70
