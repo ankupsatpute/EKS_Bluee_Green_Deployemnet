@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green
+  labels:
+    app: green
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: green
+  template:
+    metadata:
+      labels:
+        app: green
+    spec:    
+      containers:
+      - name: green
+        image: ankushsatpute/ltidockerdemo:tagVersion
+        imagePullPolicy: Always      
+        ports:
+        - containerPort: 8080
