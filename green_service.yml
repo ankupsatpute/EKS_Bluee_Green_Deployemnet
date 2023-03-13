@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-   name: green
+   name: my-app
 spec:
    selector:
-     app: green
+     app: my-app
    ports:
    - protocol: TCP
      port: 8080

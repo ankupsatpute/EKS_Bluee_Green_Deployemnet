@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green
+  name: my-app
   labels:
-    app: green
+    app: my-app
 spec:
   replicas: 2
   selector: 
     matchLabels:
-      app: green
+      app: my-app
   template:
     metadata:
       labels:
-        app: green
+        app: my-app
     spec:    
       containers:
-      - name: green
+      - name: my-app
         image: ankushsatpute/ankush:tagVersion
         imagePullPolicy: Always      
         ports:
