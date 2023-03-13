@@ -47,6 +47,9 @@ pipeline {
              }
           
           stage('Create the service in kubernetes cluster traffic to blue controller'){
+              when{
+                  branch 'blue'
+              }
              steps{ 
                   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'EKS', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                      sh "chmod +x changeTagblue.sh"
@@ -58,13 +61,16 @@ pipeline {
                 }
             }
         
-        stage('User approve to continue') {
+        /*stage('User approve to continue') {
             steps {
                 input "Ready to change redirect traffic to green?"
             }
-        }
+        }*/
         
         stage('Create the service in kubernetes cluster traffic to green controller'){
+            when {
+                branch 'green'
+            }
              steps{ 
                   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'EKS', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                      sh "chmod +x changeTaggreen.sh"
