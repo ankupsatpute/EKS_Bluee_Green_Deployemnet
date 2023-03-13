@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green
+  name: my-app
   labels:
     app: my-app
 spec:
@@ -15,7 +15,7 @@ spec:
         app: my-app
     spec:    
       containers:
-      - name: green
+      - name: my-app
         image: ankushsatpute/ankush:tagVersion
         imagePullPolicy: Always      
         ports:
