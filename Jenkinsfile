@@ -20,7 +20,7 @@ pipeline {
     
       stage('Git CheckOut'){
             steps{
-                git 'https://github.com/ankupsatpute/EKS_Bluee_Green_Deployemnet.git'     
+                 git branch: '$BRANCH_NAME', changelog: false, poll: false, url: 'https://github.com/ankupsatpute/EKS_Bluee_Green_Deployemnet.git' 
                 //echo "$BUILD_TRIGGER_BY"
                }
             }
