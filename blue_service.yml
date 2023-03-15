@@ -1,12 +1,14 @@
 kind: Service
 apiVersion: v1
 metadata:
-   name: blue
+   name: blue-deployment
+   labels:
+     name: blue-deployment
 spec:
    selector:
-     app: blue
+     name: blue-deployment
    ports:
-   - protocol: TCP
-     port: 8080
+   - protocol: TCP 
+     port: 8080   
      targetPort: 8080
    type: LoadBalancer
