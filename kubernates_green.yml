@@ -14,7 +14,7 @@ spec:
     spec:    
       containers:
       - name: green-deployment
-        image: ankushsatpute/ankush:tagVersion
+        image: ankushsatpute/java_app1:latest
         imagePullPolicy: Always      
         ports:
         - containerPort: 8080
