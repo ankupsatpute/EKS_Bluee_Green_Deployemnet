@@ -6,7 +6,7 @@ metadata:
      name: blue-deployment
 spec:
    selector:
-     name: green-deployment
+     name: blue-deployment
    ports:
    - protocol: TCP 
      port: 8080   
