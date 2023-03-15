@@ -14,7 +14,7 @@ spec:
     spec:    
       containers:
       - name: blue-deployment
-        image: ankushsatpute/ankush:tagVersion
+        image: ankushsatpute/ankush:latest
         imagePullPolicy: Always      
         ports:
         - containerPort: 8080
