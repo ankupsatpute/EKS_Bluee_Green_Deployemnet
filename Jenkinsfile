@@ -47,40 +47,28 @@ pipeline {
              }
           
           stage('Create the service in kubernetes cluster traffic to blue controller'){
-              when{
-                  branch 'blue'
-              }
              steps{ 
                   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'EKS', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                      sh "chmod +x changeTagblue.sh"
                      sh "./changeTagblue.sh ${DOCKER_TAG}"   
-                     sh "kubectl apply -f blue_kubernates.yml"
+                     sh "kubectl apply -f blue.yml"
                      sh "kubectl apply -f blue_service.yml"
   
                    }           
                 }
             }
         
-        /*stage('User approve to continue') {
-            steps {
-                input "Ready to change redirect traffic to green?"
-            }
-        }*/
-        
-        stage('Create the service in kubernetes cluster traffic to green controller'){
-            when {
-                branch 'green'
-            }
+       /* stage('Create the service in kubernetes cluster traffic to green controller'){
              steps{ 
                   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'EKS', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                      sh "chmod +x changeTaggreen.sh"
                      sh "./changeTaggreen.sh ${DOCKER_TAG}"   
-                     sh "kubectl apply -f green_kubernates.yml"
+                     sh "kubectl apply -f green.yml"
                      sh "kubectl apply -f green_service.yml"
   
                    }           
                 }
-            }
+            }*/
           
     }
 }
